@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebInspector — Анализатор сайтов</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">🔍</div>
+  <div>
+    <h1>WebInspector</h1>
+    <span>Автоматический аудит сайтов — MVP</span>
+  </div>
+</header>
+
+<div class="layout">
+  <main>
+    <section class="input-card">
+      <div class="input-row">
+        <input type="text" id="urlInput" placeholder="example.com или https://example.com" autocomplete="off">
+        <button id="analyzeBtn">Анализировать</button>
+      </div>
+      <div class="error-msg" id="errorMsg"></div>
+      <div class="spinner-wrap" id="spinnerWrap">
+        <div class="spinner"></div>
+        <span>Анализируем сайт...</span>
+      </div>
+    </section>
+
+    <div class="welcome" id="welcome">
+      <div class="big">🕵️‍♂️</div>
+      <p>Введите адрес сайта выше, чтобы получить отчёт об ошибках, предупреждениях и рекомендациях по SEO/доступности.</p>
+    </div>
+
+    <div id="results">
+      <iframe class="preview-frame" id="previewFrame" title="Предпросмотр сайта"></iframe>
+
+      <h2 class="section-title">📊 Статистика</h2>
+      <div class="stats-grid" id="statsGrid"></div>
+
+      <h2 class="section-title">❌ Ошибки</h2>
+      <div class="cards-grid" id="errorsGrid"></div>
+
+      <h2 class="section-title">⚠️ Предупреждения</h2>
+      <div class="cards-grid" id="warningsGrid"></div>
+
+      <h2 class="section-title">✅ Успехи</h2>
+      <div class="cards-grid" id="successGrid"></div>
+    </div>
+  </main>
+
+  <aside class="history-card">
+    <div class="history-head">
+      <h2>История проверок</h2>
+      <button id="clearHistoryBtn">Очистить</button>
+    </div>
+    <div id="historyList"></div>
+  </aside>
+</div>
+
+<footer>WebInspector — учебный проект. Курсовая работа, МДК 05.01.</footer>
+
+<script src="script.js"></script>
+
+</html>
